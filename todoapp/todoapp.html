@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDoApp</title>
+    <link rel="stylesheet" href="../todoapp/style.css">
+  </head>
+  <body>
+    <div class="layout">
+      <div class="leftColumn">
+          <div class="nameContainer">
+              <p>Labas, <span id="userNameDisplay"></span>!</p>
+              <p>El.paštas: <span id="emailDisplay"></span></p>
+          </div>
+          <div id="menu" class="menuContainer">
+              <div>
+                  <button id="mainView">Pagrindinis langas</button>
+                  <button id="createItem">Sukurti įrašą</button>
+                  <button id="editItem">Redaguoti įrašą</button>
+                  <button id="deleteItem">Ištrinti įrašą</button>
+                  <button id="logout">Atsijungti</button>
+              </div>
+          </div>
+      </div>
+      <div class="rightColumn">
+          <div id="itemsContainer"></div>
+    </div>
+      <script src="todoapp.js"></script>
+  </body>
+</html>
