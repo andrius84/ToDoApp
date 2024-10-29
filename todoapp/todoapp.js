@@ -87,7 +87,7 @@ function createItem() {
 
     const saveButton = document.createElement('button');
     saveButton.id = 'saveButton';
-    saveButton.innerText = 'Save';
+    saveButton.innerText = 'Išsaugoti';
 
     formContainer.appendChild(saveButton);
 
@@ -123,24 +123,18 @@ function getItemById(itemId) {
             if (!response.ok) {
                 throw new Error(`Error fetching item: ${response.status} ${response.statusText}`);
             }
-
-            const contentType = response.headers.get("content-type");
-            if (!contentType || !contentType.includes("application/json")) {
-                throw new Error('Received non-JSON response');
-            }
             return response.json();
         })
         .then(item => {
             if (item) {
                 return item;
             } else {
-                console.error('Item not found or invalid response structure.');
+                console.error('Item not found.');
                 return null;
             }
         })
         .catch(error => {
             console.error('Error fetching item:', error);
-            alert('Failed to fetch item. Please try again.');
             return null;
         });
 }
@@ -207,9 +201,6 @@ function deleteItem(itemId) {
 
     fetch(url, {
         method: 'DELETE',
-        headers: {
-            'Accept': 'application/json'
-        }
     })
     .then(response => {
         if (!response.ok) {
