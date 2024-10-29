@@ -287,11 +287,7 @@ function createItemIdForm(callback) {
 
 function chooseItemAndDelete() {
     createItemIdForm(function (itemId) {
-        getItemById(itemId).then(item => {
-            if (item) {
-                deleteItem(item.id);
-            }
-        });
+        deleteItem(itemId);
     });
 }
 
